@@ -76,7 +76,7 @@ describe('upload file', function() {
       expect(requests[i]).toBeDefined();
       expect(file.isComplete()).toBeFalsy();
       expect(file.isUploading()).toBeTruthy();
-      requests[i].respond(200);
+      requests[i].respond(202);
       expect(file.progress()).toBe((i+1) / 10);
       expect(file.isComplete()).toBeFalsy();
       expect(file.isUploading()).toBeTruthy();
@@ -85,7 +85,7 @@ describe('upload file', function() {
     expect(file.isComplete()).toBeFalsy();
     expect(file.isUploading()).toBeTruthy();
     expect(file.progress()).toBe(0.9);
-    requests[i].respond(200);
+    requests[i].respond(201);
     expect(file.isComplete()).toBeTruthy();
     expect(file.isUploading()).toBeFalsy();
     expect(file.progress()).toBe(1);
